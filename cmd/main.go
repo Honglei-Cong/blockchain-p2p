@@ -14,15 +14,12 @@ import (
 func main() {
 	rootCmd := cmd.RootCmd
 	rootCmd.AddCommand(
-		cmd.GenValidatorCmd,
 		cmd.InitFilesCmd,
 		cmd.ProbeUpnpCmd,
-		cmd.LiteCmd,
 		cmd.ReplayCmd,
 		cmd.ReplayConsoleCmd,
 		cmd.ResetAllCmd,
 		cmd.ResetPrivValidatorCmd,
-		cmd.ShowValidatorCmd,
 		cmd.TestnetFilesCmd,
 		cmd.ShowNodeIDCmd,
 		cmd.GenNodeKeyCmd,

@@ -12,6 +12,7 @@ import (
 	"github.com/9thchain/blockchain-p2p/crypto"
 	"github.com/9thchain/blockchain-p2p/types"
 	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"encoding/json"
 )
 
 func TestGenLoadValidator(t *testing.T) {
@@ -73,7 +74,7 @@ func TestUnmarshalValidator(t *testing.T) {
 }`, addr, pubB64, privB64)
 
 	val := FilePV{}
-	err := cdc.UnmarshalJSON([]byte(serialized), &val)
+	err := json.Unmarshal([]byte(serialized), &val)
 	require.Nil(err, "%+v", err)
 
 	// make sure the values match
@@ -82,7 +83,7 @@ func TestUnmarshalValidator(t *testing.T) {
 	assert.EqualValues(privKey, val.PrivKey)
 
 	// export it and make sure it is the same
-	out, err := cdc.MarshalJSON(val)
+	out, err := json.Marshal(val)
 	require.Nil(err, "%+v", err)
 	assert.JSONEq(serialized, string(out))
 }

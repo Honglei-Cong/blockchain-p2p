@@ -2,6 +2,7 @@ package types
 
 import (
 	"errors"
+	"encoding/json"
 	"fmt"
 	"strings"
 	"sync"
@@ -232,7 +233,7 @@ func (hvs *HeightVoteSet) MarshalJSON() ([]byte, error) {
 	defer hvs.mtx.Unlock()
 
 	allVotes := hvs.toAllRoundVotes()
-	return cdc.MarshalJSON(allVotes)
+	return json.Marshal(allVotes)
 }
 
 func (hvs *HeightVoteSet) toAllRoundVotes() []roundVotes {

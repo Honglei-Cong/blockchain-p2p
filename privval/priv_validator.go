@@ -11,6 +11,7 @@ import (
 	"github.com/9thchain/blockchain-p2p/crypto"
 	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 	"github.com/9thchain/blockchain-p2p/types"
+	"encoding/json"
 )
 
 // TODO: type ?
@@ -86,7 +87,7 @@ func LoadFilePV(filePath string) *FilePV {
 		cmn.Exit(err.Error())
 	}
 	pv := &FilePV{}
-	err = cdc.UnmarshalJSON(pvJSONBytes, &pv)
+	err = json.Unmarshal(pvJSONBytes, &pv)
 	if err != nil {
 		cmn.Exit(cmn.Fmt("Error reading PrivValidator from %v: %v\n", filePath, err))
 	}
@@ -124,7 +125,7 @@ func (pv *FilePV) save() {
 	if outFile == "" {
 		panic("Cannot save PrivValidator: filePath not set")
 	}
-	jsonBytes, err := cdc.MarshalJSONIndent(pv, "", "  ")
+	jsonBytes, err := json.Marshal(pv)
 	if err != nil {
 		panic(err)
 	}
@@ -310,10 +311,10 @@ func (pv *FilePV) String() string {
 // returns true if the only difference in the votes is their timestamp.
 func checkVotesOnlyDifferByTimestamp(lastSignBytes, newSignBytes []byte) (time.Time, bool) {
 	var lastVote, newVote types.CanonicalJSONVote
-	if err := cdc.UnmarshalJSON(lastSignBytes, &lastVote); err != nil {
+	if err := json.Unmarshal(lastSignBytes, &lastVote); err != nil {
 		panic(fmt.Sprintf("LastSignBytes cannot be unmarshalled into vote: %v", err))
 	}
-	if err := cdc.UnmarshalJSON(newSignBytes, &newVote); err != nil {
+	if err := json.Unmarshal(newSignBytes, &newVote); err != nil {
 		panic(fmt.Sprintf("signBytes cannot be unmarshalled into vote: %v", err))
 	}
 
@@ -326,8 +327,8 @@ func checkVotesOnlyDifferByTimestamp(lastSignBytes, newSignBytes []byte) (time.T
 	now := types.CanonicalTime(time.Now())
 	lastVote.Timestamp = now
 	newVote.Timestamp = now
-	lastVoteBytes, _ := cdc.MarshalJSON(lastVote)
-	newVoteBytes, _ := cdc.MarshalJSON(newVote)
+	lastVoteBytes, _ := json.Marshal(lastVote)
+	newVoteBytes, _ := json.Marshal(newVote)
 
 	return lastTime, bytes.Equal(newVoteBytes, lastVoteBytes)
 }
@@ -336,10 +337,10 @@ func checkVotesOnlyDifferByTimestamp(lastSignBytes, newSignBytes []byte) (time.T
 // returns true if the only difference in the proposals is their timestamp
 func checkProposalsOnlyDifferByTimestamp(lastSignBytes, newSignBytes []byte) (time.Time, bool) {
 	var lastProposal, newProposal types.CanonicalJSONProposal
-	if err := cdc.UnmarshalJSON(lastSignBytes, &lastProposal); err != nil {
+	if err := json.Unmarshal(lastSignBytes, &lastProposal); err != nil {
 		panic(fmt.Sprintf("LastSignBytes cannot be unmarshalled into proposal: %v", err))
 	}
-	if err := cdc.UnmarshalJSON(newSignBytes, &newProposal); err != nil {
+	if err := json.Unmarshal(newSignBytes, &newProposal); err != nil {
 		panic(fmt.Sprintf("signBytes cannot be unmarshalled into proposal: %v", err))
 	}
 
@@ -352,8 +353,8 @@ func checkProposalsOnlyDifferByTimestamp(lastSignBytes, newSignBytes []byte) (ti
 	now := types.CanonicalTime(time.Now())
 	lastProposal.Timestamp = now
 	newProposal.Timestamp = now
-	lastProposalBytes, _ := cdc.MarshalJSON(lastProposal)
-	newProposalBytes, _ := cdc.MarshalJSON(newProposal)
+	lastProposalBytes, _ := json.Marshal(lastProposal)
+	newProposalBytes, _ := json.Marshal(newProposal)
 
 	return lastTime, bytes.Equal(newProposalBytes, lastProposalBytes)
 }
