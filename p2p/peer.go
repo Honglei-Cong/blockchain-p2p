@@ -6,12 +6,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	crypto "github.com/tendermint/tendermint/crypto"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
+	crypto "github.com/9thchain/blockchain-p2p/crypto"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"github.com/9thchain/blockchain-p2p/libs/log"
 
-	"github.com/tendermint/tendermint/config"
-	tmconn "github.com/tendermint/tendermint/p2p/conn"
+	"github.com/9thchain/blockchain-p2p/config"
+	tmconn "github.com/9thchain/blockchain-p2p/p2p/conn"
 )
 
 var testIPSuffix uint32

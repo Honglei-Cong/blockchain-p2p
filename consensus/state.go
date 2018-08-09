@@ -10,15 +10,15 @@ import (
 	"time"
 
 	fail "github.com/ebuchman/fail-test"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"github.com/9thchain/blockchain-p2p/libs/log"
 
-	cfg "github.com/tendermint/tendermint/config"
-	cstypes "github.com/tendermint/tendermint/consensus/types"
-	tmevents "github.com/tendermint/tendermint/libs/events"
-	"github.com/tendermint/tendermint/p2p"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
+	cfg "github.com/9thchain/blockchain-p2p/config"
+	cstypes "github.com/9thchain/blockchain-p2p/consensus/types"
+	tmevents "github.com/9thchain/blockchain-p2p/libs/events"
+	"github.com/9thchain/blockchain-p2p/p2p"
+	sm "github.com/9thchain/blockchain-p2p/state"
+	"github.com/9thchain/blockchain-p2p/types"
 )
 
 //-----------------------------------------------------------------------------
@@ -631,7 +631,7 @@ func (cs *ConsensusState) handleMsg(mi msgInfo) {
 			// We probably don't want to stop the peer here. The vote does not
 			// necessarily comes from a malicious peer but can be just broadcasted by
 			// a typical peer.
-			// https://github.com/tendermint/tendermint/issues/1281
+			// https://github.com/9thchain/blockchain-p2p/issues/1281
 		}
 
 		// NOTE: the vote is broadcast to peers by the reactor listening

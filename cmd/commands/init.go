@@ -5,11 +5,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/privval"
-	"github.com/tendermint/tendermint/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cfg "github.com/9thchain/blockchain-p2p/config"
+	"github.com/9thchain/blockchain-p2p/p2p"
+	"github.com/9thchain/blockchain-p2p/privval"
+	"github.com/9thchain/blockchain-p2p/types"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 )
 
 // InitFilesCmd initialises a fresh Tendermint Core instance.

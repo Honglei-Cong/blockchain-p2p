@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/p2p/upnp"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"github.com/9thchain/blockchain-p2p/libs/log"
+	"github.com/9thchain/blockchain-p2p/p2p/upnp"
 )
 
 // Listener is a network listener for stream-oriented protocols, providing

@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	crypto "github.com/tendermint/tendermint/crypto"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	crypto "github.com/9thchain/blockchain-p2p/crypto"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 )
 
 // Returns an empty kvstore peer

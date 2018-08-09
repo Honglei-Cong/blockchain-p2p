@@ -4,7 +4,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 
-	protodb "github.com/tendermint/tendermint/libs/db/remotedb/proto"
+	protodb "github.com/9thchain/blockchain-p2p/libs/db/remotedb/proto"
 )
 
 // Security defines how the client will talk to the gRPC server.

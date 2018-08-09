@@ -5,7 +5,7 @@ import (
 	"crypto/sha256"
 	"testing"
 
-	"github.com/tendermint/tendermint/libs/bech32"
+	"github.com/9thchain/blockchain-p2p/libs/bech32"
 )
 
 func TestEncodeAndDecode(t *testing.T) {

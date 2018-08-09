@@ -11,14 +11,14 @@ import (
 
 	"github.com/pkg/errors"
 
-	bc "github.com/tendermint/tendermint/blockchain"
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/proxy"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	dbm "github.com/tendermint/tendermint/libs/db"
-	"github.com/tendermint/tendermint/libs/log"
+	bc "github.com/9thchain/blockchain-p2p/blockchain"
+	cfg "github.com/9thchain/blockchain-p2p/config"
+	"github.com/9thchain/blockchain-p2p/proxy"
+	sm "github.com/9thchain/blockchain-p2p/state"
+	"github.com/9thchain/blockchain-p2p/types"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	dbm "github.com/9thchain/blockchain-p2p/libs/db"
+	"github.com/9thchain/blockchain-p2p/libs/log"
 )
 
 const (

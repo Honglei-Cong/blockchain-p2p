@@ -11,9 +11,9 @@ import  (
 	"github.com/pkg/errors"
 
 	amino "github.com/tendermint/go-amino"
-	"github.com/tendermint/tendermint/types"
-	auto "github.com/tendermint/tendermint/libs/autofile"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	"github.com/9thchain/blockchain-p2p/types"
+	auto "github.com/9thchain/blockchain-p2p/libs/autofile"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 )
 
 const (

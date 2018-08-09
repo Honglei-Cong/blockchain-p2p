@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
-	cstypes "github.com/tendermint/tendermint/consensus/types"
-	tmpubsub "github.com/tendermint/tendermint/libs/pubsub"
-	"github.com/tendermint/tendermint/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
+	cstypes "github.com/9thchain/blockchain-p2p/consensus/types"
+	tmpubsub "github.com/9thchain/blockchain-p2p/libs/pubsub"
+	"github.com/9thchain/blockchain-p2p/types"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"github.com/9thchain/blockchain-p2p/libs/log"
 )
 
 func init() {

@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tendermint/tendermint/consensus/types"
-	tmtypes "github.com/tendermint/tendermint/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	"github.com/9thchain/blockchain-p2p/consensus/types"
+	tmtypes "github.com/9thchain/blockchain-p2p/types"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cfg "github.com/9thchain/blockchain-p2p/config"
+	"github.com/9thchain/blockchain-p2p/types"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 )
 
 var config *cfg.Config // NOTE: must be reset for each _test.go file

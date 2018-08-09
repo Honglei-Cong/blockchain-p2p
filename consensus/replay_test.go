@@ -16,19 +16,19 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/tendermint/tendermint/abci/example/kvstore"
-	abci "github.com/tendermint/tendermint/abci/types"
-	crypto "github.com/tendermint/tendermint/crypto"
-	auto "github.com/tendermint/tendermint/libs/autofile"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	dbm "github.com/tendermint/tendermint/libs/db"
+	"github.com/9thchain/blockchain-p2p/abci/example/kvstore"
+	abci "github.com/9thchain/blockchain-p2p/abci/types"
+	crypto "github.com/9thchain/blockchain-p2p/crypto"
+	auto "github.com/9thchain/blockchain-p2p/libs/autofile"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	dbm "github.com/9thchain/blockchain-p2p/libs/db"
 
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/privval"
-	"github.com/tendermint/tendermint/proxy"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
-	"github.com/tendermint/tendermint/libs/log"
+	cfg "github.com/9thchain/blockchain-p2p/config"
+	"github.com/9thchain/blockchain-p2p/privval"
+	"github.com/9thchain/blockchain-p2p/proxy"
+	sm "github.com/9thchain/blockchain-p2p/state"
+	"github.com/9thchain/blockchain-p2p/types"
+	"github.com/9thchain/blockchain-p2p/libs/log"
 )
 
 var consensusReplayConfig *cfg.Config

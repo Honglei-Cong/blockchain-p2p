@@ -6,10 +6,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 
-	"github.com/tendermint/tendermint/lite/proxy"
-	rpcclient "github.com/tendermint/tendermint/rpc/client"
+	"github.com/9thchain/blockchain-p2p/lite/proxy"
+	rpcclient "github.com/9thchain/blockchain-p2p/rpc/client"
 )
 
 // LiteCmd represents the base command when called without any subcommands

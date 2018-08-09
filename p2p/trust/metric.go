@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 )
 
 //---------------------------------------------------------------------------------------

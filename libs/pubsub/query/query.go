@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tendermint/tendermint/libs/pubsub"
+	"github.com/9thchain/blockchain-p2p/libs/pubsub"
 )
 
 // Query holds the query string and the query parser.

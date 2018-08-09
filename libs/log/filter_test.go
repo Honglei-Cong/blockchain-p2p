@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/tendermint/tendermint/libs/log"
+	"github.com/9thchain/blockchain-p2p/libs/log"
 )
 
 func TestVariousLevels(t *testing.T) {

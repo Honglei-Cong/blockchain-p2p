@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	dbm "github.com/tendermint/tendermint/libs/db"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	dbm "github.com/9thchain/blockchain-p2p/libs/db"
 )
 
 const defaultStorePeriodicSaveInterval = 1 * time.Minute

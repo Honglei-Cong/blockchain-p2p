@@ -8,10 +8,10 @@ import (
 	"time"
 
 	amino "github.com/tendermint/go-amino"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/p2p/conn"
+	"github.com/9thchain/blockchain-p2p/p2p"
+	"github.com/9thchain/blockchain-p2p/p2p/conn"
 )
 
 type Peer = p2p.Peer

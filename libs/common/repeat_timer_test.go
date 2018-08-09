@@ -50,7 +50,7 @@ func TestRepeatTimer(t *testing.T) {
 		// TODO detect number of running
 		// goroutines to ensure that
 		// no other times will fire.
-		// See https://github.com/tendermint/tendermint/libs/issues/120.
+		// See https://github.com/9thchain/blockchain-p2p/libs/issues/120.
 		time.Sleep(time.Millisecond * 100)
 		done := true
 		select {

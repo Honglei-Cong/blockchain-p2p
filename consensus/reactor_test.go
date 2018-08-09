@@ -10,14 +10,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tendermint/tendermint/abci/example/kvstore"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
+	"github.com/9thchain/blockchain-p2p/abci/example/kvstore"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"github.com/9thchain/blockchain-p2p/libs/log"
 
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/p2p"
-	p2pdummy "github.com/tendermint/tendermint/p2p/dummy"
-	"github.com/tendermint/tendermint/types"
+	cfg "github.com/9thchain/blockchain-p2p/config"
+	"github.com/9thchain/blockchain-p2p/p2p"
+	p2pdummy "github.com/9thchain/blockchain-p2p/p2p/dummy"
+	"github.com/9thchain/blockchain-p2p/types"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

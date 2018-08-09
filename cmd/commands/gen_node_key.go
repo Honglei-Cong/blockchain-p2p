@@ -5,8 +5,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/tendermint/tendermint/p2p"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	"github.com/9thchain/blockchain-p2p/p2p"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 )
 
 // GenNodeKeyCmd allows the generation of a node key. It prints node's ID to

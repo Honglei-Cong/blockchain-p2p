@@ -8,11 +8,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/tendermint/tendermint/abci/example/code"
-	abci "github.com/tendermint/tendermint/abci/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	"github.com/9thchain/blockchain-p2p/abci/example/code"
+	abci "github.com/9thchain/blockchain-p2p/abci/types"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 
-	"github.com/tendermint/tendermint/types"
+	"github.com/9thchain/blockchain-p2p/types"
 )
 
 func init() {

@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 )
 
 func BenchmarkRandomReadsWrites2(b *testing.B) {

@@ -1,7 +1,7 @@
 package test
 
 import (
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
 )
 
 // Contract: !bytes.Equal(input, output) && len(input) >= len(output)

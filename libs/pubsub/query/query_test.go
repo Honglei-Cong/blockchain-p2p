@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/tendermint/tendermint/libs/pubsub"
-	"github.com/tendermint/tendermint/libs/pubsub/query"
+	"github.com/9thchain/blockchain-p2p/libs/pubsub"
+	"github.com/9thchain/blockchain-p2p/libs/pubsub/query"
 )
 
 func TestMatches(t *testing.T) {

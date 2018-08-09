@@ -10,13 +10,13 @@ import (
 
 	amino "github.com/tendermint/go-amino"
 
-	cstypes "github.com/tendermint/tendermint/consensus/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	tmevents "github.com/tendermint/tendermint/libs/events"
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/p2p"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
+	cstypes "github.com/9thchain/blockchain-p2p/consensus/types"
+	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	tmevents "github.com/9thchain/blockchain-p2p/libs/events"
+	"github.com/9thchain/blockchain-p2p/libs/log"
+	"github.com/9thchain/blockchain-p2p/p2p"
+	sm "github.com/9thchain/blockchain-p2p/state"
+	"github.com/9thchain/blockchain-p2p/types"
 )
 
 const (

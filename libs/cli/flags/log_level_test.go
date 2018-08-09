@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	tmflags "github.com/tendermint/tendermint/libs/cli/flags"
-	"github.com/tendermint/tendermint/libs/log"
+	tmflags "github.com/9thchain/blockchain-p2p/libs/cli/flags"
+	"github.com/9thchain/blockchain-p2p/libs/log"
 )
 
 const (

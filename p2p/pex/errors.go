@@ -3,7 +3,7 @@ package pex
 import (
 	"fmt"
 
-	"github.com/tendermint/tendermint/p2p"
+	"github.com/9thchain/blockchain-p2p/p2p"
 )
 
 type ErrAddrBookNonRoutable struct {

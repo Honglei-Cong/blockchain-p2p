@@ -4,11 +4,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/tendermint/tendermint/libs/cli"
+	"github.com/9thchain/blockchain-p2p/libs/cli"
 
-	cmd "github.com/tendermint/tendermint/cmd/commands"
-	cfg "github.com/tendermint/tendermint/config"
-	nm "github.com/tendermint/tendermint/node"
+	cmd "github.com/9thchain/blockchain-p2p/cmd/commands"
+	cfg "github.com/9thchain/blockchain-p2p/config"
+	nm "github.com/9thchain/blockchain-p2p/node"
 )
 
 func main() {
