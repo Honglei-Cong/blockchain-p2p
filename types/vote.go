@@ -8,6 +8,7 @@ import (
 
 	crypto "github.com/9thchain/blockchain-p2p/crypto"
 	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"encoding/json"
 )
 
 var (
@@ -72,7 +73,7 @@ type Vote struct {
 }
 
 func (vote *Vote) SignBytes(chainID string) []byte {
-	bz, err := cdc.MarshalJSON(CanonicalVote(chainID, vote))
+	bz, err := json.Marshal(CanonicalVote(chainID, vote))
 	if err != nil {
 		panic(err)
 	}

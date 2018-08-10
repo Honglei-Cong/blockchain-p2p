@@ -31,7 +31,7 @@ type GenesisDoc struct {
 
 // SaveAs is a utility method for saving GenensisDoc as a JSON file.
 func (genDoc *GenesisDoc) SaveAs(file string) error {
-	genDocBytes, err := cdc.MarshalJSONIndent(genDoc, "", "  ")
+	genDocBytes, err := json.Marshal(genDoc)
 	if err != nil {
 		return err
 	}
@@ -87,7 +87,7 @@ func (genDoc *GenesisDoc) ValidateAndComplete() error {
 // GenesisDocFromJSON unmarshalls JSON data into a GenesisDoc.
 func GenesisDocFromJSON(jsonBlob []byte) (*GenesisDoc, error) {
 	genDoc := GenesisDoc{}
-	err := cdc.UnmarshalJSON(jsonBlob, &genDoc)
+	err := json.Unmarshal(jsonBlob, &genDoc)
 	if err != nil {
 		return nil, err
 	}

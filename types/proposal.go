@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/9thchain/blockchain-p2p/crypto"
+	"encoding/json"
 )
 
 var (
@@ -50,7 +51,7 @@ func (p *Proposal) String() string {
 
 // SignBytes returns the Proposal bytes for signing
 func (p *Proposal) SignBytes(chainID string) []byte {
-	bz, err := cdc.MarshalJSON(CanonicalProposal(chainID, p))
+	bz, err := json.Marshal(CanonicalProposal(chainID, p))
 	if err != nil {
 		panic(err)
 	}

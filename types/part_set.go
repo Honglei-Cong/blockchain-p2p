@@ -10,6 +10,7 @@ import (
 	"github.com/9thchain/blockchain-p2p/crypto/merkle"
 	"github.com/9thchain/blockchain-p2p/crypto/tmhash"
 	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"encoding/json"
 )
 
 var (
@@ -270,7 +271,7 @@ func (ps *PartSet) MarshalJSON() ([]byte, error) {
 	ps.mtx.Lock()
 	defer ps.mtx.Unlock()
 
-	return cdc.MarshalJSON(struct {
+	return json.Marshal(struct {
 		CountTotal    string        `json:"count/total"`
 		PartsBitArray *cmn.BitArray `json:"parts_bit_array"`
 	}{

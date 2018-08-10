@@ -5,6 +5,7 @@ import (
 
 	"github.com/9thchain/blockchain-p2p/crypto"
 	cmn "github.com/9thchain/blockchain-p2p/libs/common"
+	"encoding/json"
 )
 
 // Heartbeat is a simple vote-like structure so validators can
@@ -24,7 +25,7 @@ type Heartbeat struct {
 // SignBytes returns the Heartbeat bytes for signing.
 // It panics if the Heartbeat is nil.
 func (heartbeat *Heartbeat) SignBytes(chainID string) []byte {
-	bz, err := cdc.MarshalJSON(CanonicalHeartbeat(chainID, heartbeat))
+	bz, err := json.Marshal(CanonicalHeartbeat(chainID, heartbeat))
 	if err != nil {
 		panic(err)
 	}
