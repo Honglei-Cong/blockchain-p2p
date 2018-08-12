@@ -1,0 +1,145 @@
+/*
+SPDX-License-Identifier: Apache-2.0
+*/
+
+syntax = "proto3";
+
+option go_package = "github.com/9thchain/blockchain-p2p/protos/tendermint";
+option java_package = "org.9thchain.blockchain-p2p.protos.tendermint";
+
+package tendermint;
+
+import "google/protobuf/timestamp.proto";
+
+enum RoundStepType {
+    Unknown = 0;
+    NewHeight = 1;
+    NewRound = 2;
+    Propose = 3;
+    Prevote = 4;
+    PrevoteWait = 5;
+    Precommit = 6;
+    PrecommitWait = 7;
+    Commit = 8;
+}
+
+message NewRoundStepMessage {
+    uint64 height = 1;
+    uint32 round = 2;
+    RoundStepType step = 3;
+    uint32 secondsSinceStartTime = 4;
+    uint32 lastCommitRound = 5;
+}
+
+message PartSetHeader {
+    uint32 total = 1;
+    bytes hash = 2;
+}
+
+message BitArray {
+    uint32 bits = 1;
+    repeated uint64 elems = 2;
+}
+
+message CommitStepMessage {
+    uint64 height = 1;
+    PartSetHeader blockPartHeader = 2;
+    BitArray blockParts = 3;
+}
+
+message BlockID {
+    bytes hash = 1;
+    PartSetHeader partsHeader = 2;
+}
+
+message Proposal {
+    uint64 height = 1;
+    uint32 round = 2;
+    google.protobuf.Timestamp timestamp = 3;
+    PartSetHeader blockPartsHeader = 4;
+    int32 POLRound = 5;
+    bytes signatuure = 6;
+}
+
+message ProposalMessage {
+    Proposal Proposal = 1;
+}
+
+message ProposalPOLMessage {
+    uint64 height = 1;
+    uint32 proposalPOLRound = 2;
+    BitArray proposalPOL = 3;
+}
+
+message SimpleProof {
+    repeated bytes aunts = 1;
+}
+
+message Part {
+    uint64 index = 1;
+    bytes bytes = 2;
+    SimpleProof proof = 3;
+    bytes hash = 4;
+}
+
+message BlockPartMessage {
+    uint64 height = 1;
+    uint32 round = 2;
+    Part part = 3;
+}
+
+enum VoteType {
+    UnVote = 0;
+    PreVote = 1;
+    PreCommit = 2;
+}
+
+message Vote {
+    bytes validatorAddress = 1;
+    uint32 validatorIndex = 2;
+    uint64 height = 3;
+    uint32 round = 4;
+    google.protobuf.Timestamp timestamp = 5;
+    VoteType type = 6;
+    BlockID blockID = 7;
+    bytes signature = 8;
+}
+
+message VoteMessage {
+    Vote vote = 1;
+}
+
+message HasVoteMessage {
+    uint64 height = 1;
+    uint32 round = 2;
+    VoteType type = 3;
+    uint32 index = 4;
+}
+
+message VoteSetMaj23Message {
+    uint64 height = 1;
+    uint32 round = 2;
+    VoteType type = 3;
+    BlockID blockID = 4;
+}
+
+message VoteSetBitsMessage {
+    uint64 height = 1;
+    uint32 round = 2;
+    VoteType type = 3;
+    BlockID blockID = 4;
+    BitArray votes = 5;
+}
+
+message Heartbeat {
+    bytes validatorAddress = 1;
+    uint32 validatorIndex = 2;
+    uint64 height = 3;
+    uint32 round = 4;
+    uint32 sequence = 5;
+    bytes signature = 6;
+}
+
+message ProposalHeartbeatMessage {
+    Heartbeat heartbeat = 1;
+}
