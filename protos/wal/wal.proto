@@ -1,0 +1,38 @@
+/*
+SPDX-License-Identifier: Apache-2.0
+*/
+
+syntax = "proto3";
+
+option go_package = "github.com/9thchain/blockchain-p2p/protos/wal";
+option java_package = "org.9thchain.blockchain-p2p.protos.wal";
+
+package wal;
+
+import "consensus/consensus.proto";
+import "p2p/p2p.proto";
+
+message EventDataRoundState {
+    uint64 height = 1;
+    uint32 round = 2;
+    string step = 3;
+    bytes roundState = 4;
+}
+
+message MsgInfo {
+    oneof Msg {
+        consensus.NewRoundStepMessage roundStepMsg = 1;
+    }
+    p2p.ID peerID = 2;
+}
+
+message TimeoutInfo {
+    uint64 duration = 1;
+    uint64 height = 2;
+    uint32 round = 3;
+    consensus.RoundStepType step = 4;
+}
+
+message EndHeightMessage {
+    uint64 height = 1;
+}

@@ -7,8 +7,9 @@ syntax = "proto3";
 option go_package = "github.com/9thchain/blockchain-p2p/protos/consensus";
 option java_package = "org.9thchain.blockchain-p2p.protos.consensus";
 
-package tendermint;
+package consensus;
 
+import "common/common.proto";
 import "google/protobuf/timestamp.proto";
 
 enum RoundStepType {
@@ -31,11 +32,6 @@ message NewRoundStepMessage {
     uint32 lastCommitRound = 5;
 }
 
-message PartSetHeader {
-    uint32 total = 1;
-    bytes hash = 2;
-}
-
 message BitArray {
     uint32 bits = 1;
     repeated uint64 elems = 2;
@@ -43,20 +39,15 @@ message BitArray {
 
 message CommitStepMessage {
     uint64 height = 1;
-    PartSetHeader blockPartHeader = 2;
+    common.PartSetHeader blockPartHeader = 2;
     BitArray blockParts = 3;
-}
-
-message BlockID {
-    bytes hash = 1;
-    PartSetHeader partsHeader = 2;
 }
 
 message Proposal {
     uint64 height = 1;
     uint32 round = 2;
     google.protobuf.Timestamp timestamp = 3;
-    PartSetHeader blockPartsHeader = 4;
+    common.PartSetHeader blockPartsHeader = 4;
     int32 POLRound = 5;
     bytes signatuure = 6;
 }
@@ -101,7 +92,7 @@ message Vote {
     uint32 round = 4;
     google.protobuf.Timestamp timestamp = 5;
     VoteType type = 6;
-    BlockID blockID = 7;
+    common.BlockID blockID = 7;
     bytes signature = 8;
 }
 
@@ -120,14 +111,14 @@ message VoteSetMaj23Message {
     uint64 height = 1;
     uint32 round = 2;
     VoteType type = 3;
-    BlockID blockID = 4;
+    common.BlockID blockID = 4;
 }
 
 message VoteSetBitsMessage {
     uint64 height = 1;
     uint32 round = 2;
     VoteType type = 3;
-    BlockID blockID = 4;
+    common.BlockID blockID = 4;
     BitArray votes = 5;
 }
 

@@ -1,0 +1,28 @@
+/*
+SPDX-License-Identifier: Apache-2.0
+*/
+
+syntax = "proto3";
+
+option go_package = "github.com/9thchain/blockchain-p2p/protos/common";
+option java_package = "org.9thchain.blockchain-p2p.protos.common";
+
+package common;
+
+message PartSetHeader {
+    uint32 total = 1;
+    bytes hash = 2;
+}
+
+message BlockID {
+    bytes hash = 1;
+    PartSetHeader partsHeader = 2;
+}
+
+message Header {
+
+}
+
+message Block {
+
+}

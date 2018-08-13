@@ -1,0 +1,53 @@
+/*
+SPDX-License-Identifier: Apache-2.0
+*/
+
+syntax = "proto3";
+
+option go_package = "github.com/9thchain/blockchain-p2p/protos/p2p";
+option java_package = "org.9thchain.blockchain-p2p.protos.p2p";
+
+package p2p;
+
+message ID {
+    string ID = 1;
+}
+
+message PacketPing {
+
+}
+
+message PacketPong {
+
+}
+
+message PacketMsg {
+    uint32 channelID = 1;
+    uint32 EOF = 2;
+    bytes Bytes = 3;
+}
+
+message NodeInfo {
+    ID ID = 1;
+    string listenAddr = 2;
+    string network = 3;
+    string version = 4;
+    bytes channels = 5;
+    string moniker = 6;
+    repeated string other = 7;
+}
+
+message PexRequestMessage {
+
+}
+
+message NetAddress {
+    ID ID = 1;
+    bytes IP = 2;
+    uint32 port = 3;
+    string str = 4;
+}
+
+message PexAddrsMessage {
+    repeated NetAddress Addrs = 1;
+}
