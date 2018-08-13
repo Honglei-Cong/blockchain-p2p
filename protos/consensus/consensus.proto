@@ -4,8 +4,8 @@ SPDX-License-Identifier: Apache-2.0
 
 syntax = "proto3";
 
-option go_package = "github.com/9thchain/blockchain-p2p/protos/tendermint";
-option java_package = "org.9thchain.blockchain-p2p.protos.tendermint";
+option go_package = "github.com/9thchain/blockchain-p2p/protos/consensus";
+option java_package = "org.9thchain.blockchain-p2p.protos.consensus";
 
 package tendermint;
 

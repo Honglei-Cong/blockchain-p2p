@@ -17,6 +17,7 @@ import (
 	"github.com/9thchain/blockchain-p2p/p2p"
 	sm "github.com/9thchain/blockchain-p2p/state"
 	"github.com/9thchain/blockchain-p2p/types"
+	"encoding/json"
 )
 
 const (
@@ -887,7 +888,7 @@ func (ps *PeerState) ToJSON() ([]byte, error) {
 	ps.mtx.Lock()
 	defer ps.mtx.Unlock()
 
-	return cdc.MarshalJSON(ps)
+	return json.Marshal(ps)
 }
 
 // GetHeight returns an atomic snapshot of the PeerRoundState's height
