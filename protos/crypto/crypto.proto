@@ -9,14 +9,26 @@ option java_package = "org.9thchain.blockchain-p2p.protos.crypto";
 
 package crypto;
 
-message PubKey {
-
+message PubKeyEd25519 {
+    bytes key = 1;
 }
 
-message PrivKey {
-
+message PubKeySecp256k1 {
+    bytes key = 1;
 }
 
-message Signature {
+message PrivKeyEd25519 {
+    bytes key = 1;
+}
 
+message PrivKeySecp256k1 {
+    bytes key = 1;
+}
+
+message SignatureEd25519 {
+    bytes sig = 1;
+}
+
+message SignatureSecp256k1 {
+    bytes sig = 1;
 }

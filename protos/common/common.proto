@@ -9,7 +9,7 @@ option java_package = "org.9thchain.blockchain-p2p.protos.common";
 
 package common;
 
-import "crypto/crypto.proto"
+import "crypto/crypto.proto";
 
 message PartSetHeader {
     uint32 total = 1;
@@ -65,9 +65,12 @@ message Vote {
 }
 
 message DuplicatedVoteEvidence {
-    crypto.PubKey pubKey = 1;
-    Vote voteA = 2;
-    Vote voteB = 3;
+    oneof pubKey {
+        crypto.PubKeyEd25519 pubKeyEd25519 = 1;
+        crypto.PubKeySecp256k1 pubKeySecp256k1 = 2;
+    }
+    Vote voteA = 3;
+    Vote voteB = 4;
 }
 
 message Evidence {
