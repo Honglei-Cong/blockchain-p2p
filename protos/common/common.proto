@@ -9,6 +9,8 @@ option java_package = "org.9thchain.blockchain-p2p.protos.common";
 
 package common;
 
+import "crypto/crypto.proto"
+
 message PartSetHeader {
     uint32 total = 1;
     bytes hash = 2;
@@ -20,9 +22,68 @@ message BlockID {
 }
 
 message Header {
+    string chainID = 1;
+    uint64 height = 2;
+    google.protobuf.Timestamp time = 3;
+    uint64 numTxs = 4;
+    BlockID lastBlockID = 5;
+    uint64 totalTxs = 6;
+    bytes lastCommitHash = 7;
+    bytes dataHash = 8;
+    bytes validatorHash = 9;
+    bytes consensusHash = 10;
+    bytes appHash = 11;
+    bytes lastResultsHash = 12;
+    bytes evidenceHash = 13;
+}
 
+message Tx {
+    bytes payload = 1;
+}
+
+message Data {
+    repeated Tx txs = 1;
+    bytes hash = 2;
+}
+
+
+enum VoteType {
+    UnVote = 0;
+    PreVote = 1;
+    PreCommit = 2;
+}
+
+message Vote {
+    bytes validatorAddress = 1;
+    uint32 validatorIndex = 2;
+    uint64 height = 3;
+    uint32 round = 4;
+    google.protobuf.Timestamp timestamp = 5;
+    VoteType type = 6;
+    BlockID blockID = 7;
+    bytes signature = 8;
+}
+
+message DuplicatedVoteEvidence {
+    crypto.PubKey pubKey = 1;
+    Vote voteA = 2;
+    Vote voteB = 3;
+}
+
+message Evidence {
+    oneof evidence {
+        DuplicatedVoteEvidence dupEvidence = 1;
+    }
+}
+
+message EvidenceData {
+    repeated Evidence evidence = 1;
+    bytes hash = 2;
 }
 
 message Block {
-
+    Header header = 1;
+    Data data = 2;
+    EvidenceData evidence = 3;
+    Commit lastCommit = 4;
 }
