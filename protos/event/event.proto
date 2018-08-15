@@ -9,5 +9,28 @@ option java_package = "org.9thchain.blockchain-p2p.protos.event";
 
 package event;
 
+import "common/common.proto";
 
+message EventDataNewBlock {
+    common.Block block = 1;
+}
 
+message EventDataBlockHeader {
+    common.Header header = 1;
+}
+
+message EventDataTx {
+
+}
+
+message EventDataRoundState {
+
+}
+
+message EventDataProposalHeartbeat {
+
+}
+
+message EventDataString {
+
+}

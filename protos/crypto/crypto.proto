@@ -12,3 +12,11 @@ package crypto;
 message PubKey {
 
 }
+
+message PrivKey {
+
+}
+
+message Signature {
+
+}

@@ -81,6 +81,11 @@ message EvidenceData {
     bytes hash = 2;
 }
 
+message Commit {
+    BlockID blockID = 1;
+    repeated Vote Precommits = 2;
+}
+
 message Block {
     Header header = 1;
     Data data = 2;
