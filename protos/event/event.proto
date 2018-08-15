@@ -27,10 +27,14 @@ message EventDataRoundState {
 
 }
 
-message EventDataProposalHeartbeat {
+message EventDataVote {
+    common.Vote vote = 1;
+}
 
+message EventDataProposalHeartbeat {
+    common.Heartbeat heartbeat = 1;
 }
 
 message EventDataString {
-
+    string data = 1;
 }

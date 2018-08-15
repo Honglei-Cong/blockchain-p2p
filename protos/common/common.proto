@@ -10,6 +10,7 @@ option java_package = "org.9thchain.blockchain-p2p.protos.common";
 package common;
 
 import "crypto/crypto.proto";
+import "google/protobuf/timestamp.proto";
 
 message PartSetHeader {
     uint32 total = 1;
@@ -94,4 +95,13 @@ message Block {
     Data data = 2;
     EvidenceData evidence = 3;
     Commit lastCommit = 4;
+}
+
+message Heartbeat {
+    bytes validatorAddress = 1;
+    uint32 validatorIndex = 2;
+    uint64 height = 3;
+    uint32 round = 4;
+    uint32 sequence = 5;
+    bytes signature = 6;
 }

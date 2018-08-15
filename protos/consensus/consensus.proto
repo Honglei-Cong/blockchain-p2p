@@ -105,15 +105,6 @@ message VoteSetBitsMessage {
     BitArray votes = 5;
 }
 
-message Heartbeat {
-    bytes validatorAddress = 1;
-    uint32 validatorIndex = 2;
-    uint64 height = 3;
-    uint32 round = 4;
-    uint32 sequence = 5;
-    bytes signature = 6;
-}
-
 message ProposalHeartbeatMessage {
-    Heartbeat heartbeat = 1;
+    common.Heartbeat heartbeat = 1;
 }

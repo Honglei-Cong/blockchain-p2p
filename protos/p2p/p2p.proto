@@ -14,11 +14,9 @@ message ID {
 }
 
 message PacketPing {
-
 }
 
 message PacketPong {
-
 }
 
 message PacketMsg {
@@ -38,7 +36,6 @@ message NodeInfo {
 }
 
 message PexRequestMessage {
-
 }
 
 message NetAddress {
